@@ -1,0 +1,31 @@
+.about {
+    @include section;
+    background-color: var(--primary-bg-color);
+}
+.about-list {
+    @include list;
+    display: flex;
+    margin-left: -30px;
+}
+.about-list__item {
+    flex-basis: calc((100% - 90px) / 4);
+    margin-left: 30px;
+}
+.about-list__box {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F4FA;
+    margin-bottom: 30px;
+}
+.about-list__title {
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.about-list__text {
+    color: var(--secondary-txt-color);
+    line-height: 2;
+}

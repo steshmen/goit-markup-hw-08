@@ -1,0 +1,98 @@
+.footer {
+    background-color: var(--secondary-bg-color);
+    padding: 60px 0;
+    & .container {
+        display: flex;
+        align-items: baseline;
+    }
+}
+.logo_bottom {
+    color: var(--primary-bg-color);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.address-list {
+    @include list;
+}
+.address-list__item:not(:last-child) {
+    margin-bottom: 10px;
+}
+.address-list__link {
+    @include link;
+    color: var(--primary-bg-color);
+    line-height: 1.71;
+}
+.address-list__link_color {
+    color: var(--link-foot-color);
+}
+
+.social-box {
+    margin-left: 70px;
+}
+.social-box__text {
+    color: var(--primary-bg-color);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.social-list__link_footer {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.social-list__icon_footer {
+    fill: var(--primary-bg-color);
+}
+.footer-form {
+    margin-left: auto;
+}
+.footer-form__label {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--primary-bg-color);
+}
+.footer-form__box {
+    display: flex;
+}
+.footer-form__input {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 15px 16px;
+    width: 358px;
+    color: var(--primary-bg-color);
+    &::placeholder {
+        font-family: var(--primary-font);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.03em;
+        color: var(--link-foot-color);
+    }
+}
+.footer-button {
+    background-color: var(--accent-color);
+    color: var(--primary-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10px 28px;
+    margin-left: 12px;
+    font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+}
+.footer-button__icon {
+    fill: var(--primary-bg-color);
+    margin-left: 10px;
+}
