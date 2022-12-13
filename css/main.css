@@ -166,7 +166,6 @@ address {
 }
 
 .modal {
-  width: 450px;
   border-radius: 4px;
   background-color: var(--primary-bg-color);
   position: absolute;
@@ -415,9 +414,25 @@ address {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+@media screen and (max-width: 767px) {
+  .modal {
+    width: 95%;
+    max-width: 450px;
+    height: 95%;
+    max-height: 609px;
+    overflow: scroll;
+  }
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 450px;
+    height: 609px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .modal {
     width: 528px;
+    height: 581px;
   }
   .modal__text {
     line-height: 1.1;
@@ -475,12 +490,12 @@ address {
     fill: var(--primary-txt-color);
   }
   .mobile-menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: var(--primary-bg-color);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -495,6 +510,14 @@ address {
   .mobile-menu__container {
     position: relative;
     padding: 48px 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
   }
   .mobile-menu__close-btn {
     border: none;
@@ -516,7 +539,7 @@ address {
   }
   .mobile-nav {
     list-style: none;
-    margin-bottom: 306px;
+    margin-bottom: auto;
   }
   .mobile-nav__item:not(:last-child) {
     margin-bottom: 32px;
@@ -532,6 +555,9 @@ address {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .mobile-nav__link:hover {
+    color: var(--accent-color);
+  }
+  .mobile-nav__link_active {
     color: var(--accent-color);
   }
   .mobile-cont {
@@ -561,9 +587,9 @@ address {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 20px;
   }
   .mobile-social__link {
     text-decoration: none;
@@ -580,7 +606,7 @@ address {
     height: 22px;
     background-color: rgba(33, 33, 33, 0.2);
     position: absolute;
-    margin-left: 15px;
+    margin-left: 10px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -717,6 +743,8 @@ address {
   font-weight: 900;
   font-size: 26px;
   line-height: 1.6;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -752,6 +780,11 @@ address {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-mob-bgn@x2.jpg);
   }
 }
+@media screen and (max-width: 1199px) {
+  .hero__title {
+    max-width: 360px;
+  }
+}
 @media screen and (min-width: 768px) {
   .hero {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero-table-bgn.jpg);
@@ -765,20 +798,23 @@ address {
   }
 }
 @media screen and (min-width: 1200px) {
-  .hero .hero {
+  .hero {
+    max-width: 1600px;
+    height: 600px;
+    padding: 200px 0;
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero-desc-bgn.jpg);
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-desc-bgn.jpg);
-    max-width: 1600px;
   }
 }
 @media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
-  .hero .hero {
+  .hero {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(/images/hero-desc-bgn@2x.jpg);
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/hero-desc-bgn@2x.jpg);
   }
 }
 @media screen and (min-width: 1200px) {
-  .hero-title {
+  .hero__title {
+    max-width: 696px;
     font-size: 44px;
     line-height: 1.36;
   }
@@ -818,7 +854,6 @@ address {
 }
 
 .about-list__title {
-  text-align: center;
   font-size: 14px;
   line-height: 1.14;
   margin-bottom: 10px;
@@ -833,6 +868,9 @@ address {
   .about-list__item:not(:last-child) {
     margin-bottom: 30px;
   }
+  .about-list__title {
+    text-align: center;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .about-list {
@@ -841,13 +879,11 @@ address {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    gap: 30px;
   }
   .about-list__item {
     -ms-flex-preferred-size: calc((100% - 30px) / 2);
         flex-basis: calc((100% - 30px) / 2);
-  }
-  .about-list__item:nth-child(odd) {
-    margin-right: 30px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -859,12 +895,11 @@ address {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-left: -30px;
+    gap: 30px;
   }
   .about-list__item {
     -ms-flex-preferred-size: calc((100% - 90px) / 4);
         flex-basis: calc((100% - 90px) / 4);
-    margin-left: 30px;
   }
   .about-list__title {
     text-transform: uppercase;
@@ -886,6 +921,11 @@ address {
   }
   .work .sec-title {
     margin-bottom: 50px;
+  }
+  .sec-title {
+    margin-bottom: 50px;
+    font-size: 36px;
+    line-height: 1.16;
   }
   .work-list {
     list-style: none;
@@ -1296,7 +1336,6 @@ address {
 .logo_bottom {
   color: var(--primary-bg-color);
   display: block;
-  text-align: center;
   margin-bottom: 20px;
   font-size: 24px;
   line-height: 1.17;
@@ -1304,8 +1343,6 @@ address {
 
 .address-list {
   list-style: none;
-  text-align: center;
-  margin-bottom: 60px;
 }
 
 .address-list__item:not(:last-child) {
@@ -1332,7 +1369,6 @@ address {
   line-height: 1.14;
   margin-bottom: 20px;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .social-list__link_footer {
@@ -1448,6 +1484,15 @@ address {
   }
 }
 @media screen and (max-width: 1199px) {
+  .logo_bottom {
+    text-align: center;
+  }
+  .address-list {
+    text-align: center;
+  }
+  .social-box__text {
+    text-align: center;
+  }
   .footer-form__label {
     text-align: center;
   }
@@ -1457,6 +1502,9 @@ address {
   .footer-button {
     margin-left: auto;
     margin-right: auto;
+  }
+  .address-list {
+    margin-bottom: 60px;
   }
 }
 @media screen and (min-width: 768px) {

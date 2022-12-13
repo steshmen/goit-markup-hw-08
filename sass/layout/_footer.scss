@@ -7,15 +7,12 @@
 .logo_bottom {
     color: var(--primary-bg-color);
     display: block;
-    text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
     line-height: 1.17;
 }
 .address-list {
     @include list;
-    text-align: center;
-    margin-bottom: 60px;
 }
 .address-list__item:not(:last-child) {
     margin-bottom: 8px;
@@ -37,7 +34,6 @@
     line-height: 1.14;
     margin-bottom: 20px;
     text-transform: uppercase;
-    text-align: center;
 }
 .social-list__link_footer {
     background-color: rgba(255, 255, 255, 0.1);
@@ -98,12 +94,22 @@
         margin-left: 76px;
         margin-right: 165px;
     }
+
     .footer-form {
         width: 450px;
         margin-left: 166px;
     }
 }
 @media screen and (max-width: 1199px) {
+    .logo_bottom {
+        text-align: center;
+    }
+    .address-list {
+        text-align: center;
+    }
+    .social-box__text {
+        text-align: center;
+    }
     .footer-form__label {
         text-align: center;
     }
@@ -113,6 +119,9 @@
     .footer-button {
         margin-left: auto;
         margin-right: auto;
+    }
+    .address-list {
+        margin-bottom: 60px;
     }
 }
 @media screen and (min-width: 768px) {
