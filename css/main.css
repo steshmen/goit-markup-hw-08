@@ -345,12 +345,13 @@ address {
 .modal-form__label_checkbox {
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.17;
+  line-height: 1.2;
   color: var(--secondary-txt-color);
 }
 .modal-form__label_checkbox::before {
   content: "";
   display: inline-block;
+  vertical-align: middle;
   background-image: url(../images/icon-check-cold.svg);
   width: 16px;
   height: 15px;
