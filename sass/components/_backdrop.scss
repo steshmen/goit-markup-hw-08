@@ -52,6 +52,7 @@
         fill: var(--accent-color);
     }
 }
+
 .modal__text {
     font-weight: 700;
     font-size: 20px;
@@ -126,16 +127,12 @@
 }
 .modal-form__wripper_checkbox {
     margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
 }
 .modal-form__label_checkbox {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
     color: var(--secondary-txt-color);
-    display: flex;
-    align-items: center;
     &::before {
         content: "";
         display: inline-block;

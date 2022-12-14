@@ -15,12 +15,12 @@
     @include list;
 }
 .address-list__item:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 .address-list__link {
     @include link;
     color: var(--primary-bg-color);
-    line-height: 1.71;
+    line-height: 1.17;
 }
 .address-list__link_color {
     color: var(--link-foot-color);
@@ -132,9 +132,6 @@
     }
 }
 @media screen and (min-width: 1200px) {
-    .address-list__item:not(:last-child) {
-        margin-bottom: 10px;
-    }
     .social-box {
         margin-left: 70px;
     }
