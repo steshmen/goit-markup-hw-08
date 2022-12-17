@@ -515,7 +515,7 @@ address {
             flex-direction: column;
     height: 100%;
   }
-  .mobile-menu__close-btn {
+  .menu-close-button {
     border: none;
     padding: 0;
     line-height: 0;
@@ -525,12 +525,12 @@ address {
     right: 15px;
     cursor: pointer;
   }
-  .mobile-menu__close-icon {
+  .menu-close-button__icon {
     fill: var(--primary-txt-color);
     -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .mobile-menu__close-btn:hover .mobile-menu__close-icon, .mobile-menu__close-btn:focus .mobile-menu__close-icon {
+  .menu-close-button:hover .menu-close-button__icon, .menu-close-button:focus .menu-close-button__icon {
     fill: var(--accent-color);
   }
   .mobile-nav {
@@ -583,15 +583,13 @@ address {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     gap: 20px;
   }
   .mobile-social__link {
     text-decoration: none;
     color: var(--accent-color);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.22;
     letter-spacing: 0.02em;
     position: relative;
@@ -605,7 +603,10 @@ address {
     margin-left: 10px;
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 380px) {
+  .mobile-social__link {
+    font-size: 12px;
+  }
   .mobile-nav__item:not(:last-child) {
     margin-bottom: 12px;
   }
@@ -620,11 +621,6 @@ address {
   .mobile-cont__link_tel {
     font-weight: 500;
     font-size: 27px;
-  }
-}
-@media screen and (max-width: 345px) {
-  .mobile-social__link {
-    font-size: 15px;
   }
 }
 @media screen and (min-width: 768px) {
